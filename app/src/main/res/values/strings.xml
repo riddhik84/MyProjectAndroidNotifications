@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MyProjectAndroidNotifications</string>
+    <string name="action_settings">Settings</string>
+    <string name="AppHeading">Notifications</string>
+
+    <string name="SimpleNotification">Simple Notification</string>
+    <string name="ExpandedNotification">Expanded Notification</string>
+    <string name="NotificationWithBtn">Notification with Btn</string>
+    <string name="BigPictureStyleN">BigPicture Style</string>
+
+
+    <string name="NotificationTitle">Simple Notification Title</string>
+    <string name="NotificationText">Simple notifications in Android are easy to implement.</string>
+
+    <string name="ExpNotificationTitle">Expanded Notification Title</string>
+    <string name="ExpNotificationText">Expanded Notifications in Android are easy to implement.</string>
+    <string name="ExpandedText">Event #</string>
+
+    <string name="NotificationWtBtnTitle">Notification With Buttons Title</string>
+    <string name="NotificationWtBtnText">Notifications with a button at the end. Press button to open app.</string>
+    <string name="NotificationWtBtnTicker">Notification with button Ticker</string>
+    <string name="NotificationBtnLabel">Mail</string>
+
+    <string name="BigPictureStyleTitle">BigPicture Style Notification Title.</string>
+    <string name="BigPictureStyleText">BigPicture style notification can show an image in the expanded notification.</string>
+
+    <string name="title_activity_result">ResultActivity</string>
+</resources>
