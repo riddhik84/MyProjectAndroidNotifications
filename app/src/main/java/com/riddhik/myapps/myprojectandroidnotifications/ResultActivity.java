@@ -30,8 +30,7 @@ public class ResultActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = getIntent();
-        String message = intent.getStringExtra("ACTION");
+        String message = getString(R.string.result_activity_text);
         TextView tv = (TextView) findViewById(R.id.messageTV);
         tv.setText(message);
     }

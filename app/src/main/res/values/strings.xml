@@ -24,5 +24,7 @@
     <string name="BigPictureStyleTitle">BigPicture Style Notification Title.</string>
     <string name="BigPictureStyleText">BigPicture style notification can show an image in the expanded notification.</string>
 
+    <string name="result_activity_text">This is result activity</string>
+
     <string name="title_activity_result">ResultActivity</string>
 </resources>
