@@ -1,5 +1,6 @@
 package com.riddhik.myapps.myprojectandroidnotifications;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -27,6 +28,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     Button expandedNotificationBtn;
     Button notificationWithBtn;
     Button bigPictureStyleBtn;
+    Button headsupNotificationBtn;
 
     public MainActivityFragment() {
     }
@@ -39,11 +41,13 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         expandedNotificationBtn = (Button) rootview.findViewById(R.id.expandedNotificationBtn);
         notificationWithBtn = (Button) rootview.findViewById(R.id.notificationWithBtn);
         bigPictureStyleBtn = (Button) rootview.findViewById(R.id.bigpicturestyleNBtn);
+        headsupNotificationBtn = (Button) rootview.findViewById(R.id.headsupnotificationBtn);
 
         simpleNotificationBtn.setOnClickListener(this);
         expandedNotificationBtn.setOnClickListener(this);
         notificationWithBtn.setOnClickListener(this);
         bigPictureStyleBtn.setOnClickListener(this);
+        headsupNotificationBtn.setOnClickListener(this);
 
         return rootview;
     }
@@ -161,6 +165,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         );
         //Set intent to notification builder
         mBuilder.setContentIntent(pendingIntent);
+        mBuilder.setAutoCancel(true);
 
         //5. Display the notification using NotificationManager
         NotificationManager mNotificationManager =
@@ -207,6 +212,30 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         mNotificationManager.notify(notificationID, mBuilder.build());
     }
 
+    public void headsupNotification() {
+        Log.d(LOG_TAG, "In headsupNotification() method");
+
+        //1. Create a notification ID
+        int notificationID = 500;
+
+        //2. Build notification with different properties
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getActivity());
+        mBuilder.setSmallIcon(R.drawable.ic_stat_action_stars)
+                .setContentTitle(getString(R.string.HeadsUpNotificationTitle))
+                .setContentText(getString(R.string.HeadsUpNotificationText))
+                .setAutoCancel(true)
+                .setTicker(getString(R.string.HeadsUpNotificationText))
+                .setCategory(Notification.CATEGORY_MESSAGE)
+                .setPriority(Notification.PRIORITY_MAX)
+                .setVisibility(Notification.VISIBILITY_SECRET)
+                .setDefaults(Notification.DEFAULT_VIBRATE); //This line required to show headsup notification!!!
+
+        //3. Show Notification
+        NotificationManager nm = (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        nm.notify(notificationID, mBuilder.build());
+
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -228,6 +257,11 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
             case R.id.bigpicturestyleNBtn: {
                 Log.d(LOG_TAG, "BigPicture style notification button clicked");
                 bigPictureStyleNotification();
+                break;
+            }
+            case R.id.headsupnotificationBtn: {
+                Log.d(LOG_TAG, "Headsup notification button clicked");
+                headsupNotification();
                 break;
             }
         }

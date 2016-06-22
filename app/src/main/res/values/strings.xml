@@ -7,6 +7,7 @@
     <string name="ExpandedNotification">Expanded Notification</string>
     <string name="NotificationWithBtn">Notification with Btn</string>
     <string name="BigPictureStyleN">BigPicture Style</string>
+    <string name="headsUpNotification">HeadsUp Notification</string>
 
 
     <string name="NotificationTitle">Simple Notification Title</string>
@@ -23,6 +24,9 @@
 
     <string name="BigPictureStyleTitle">BigPicture Style Notification Title.</string>
     <string name="BigPictureStyleText">BigPicture style notification can show an image in the expanded notification.</string>
+
+    <string name="HeadsUpNotificationTitle">HeadsUp Notification Title.</string>
+    <string name="HeadsUpNotificationText">HeadsUpNotification notification appears on top of any activity.</string>
 
     <string name="result_activity_text">This is result activity</string>
 
